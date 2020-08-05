@@ -3,6 +3,6 @@ class Restaurant < ApplicationRecord
   CATEGORIES = %w(chinese italian japanese french belgian)
   validates :name, presence: true
   validates :address, presence: true
-  validates :category, inclusion: { in: Restaurant::CATEGORIES,
+  validates :category, presence: true, inclusion: { in: Restaurant::CATEGORIES,
     message: "%{value} is not a valid category" }
 end
